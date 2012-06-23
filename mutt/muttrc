@@ -1,0 +1,56 @@
+#------------------------------------------------------#
+# ~/.mail_config/mutt/muttrc
+# Main configuration based on
+# http://www.physics.drexel.edu/liki/index.php/Mutt
+#
+
+# This is where your local mail directory is located.
+# Other mail directories (ie, +"school/inbox") are
+# relative to this.
+#
+set folder = ~/.mail
+
+# This is the list of mailboxes created by offlineimap.  We want to
+# check these for new mail.
+#
+source ~/.mail_config/mutt/muttmailboxes
+
+# when you start mutt, this is the inbox that will open by default
+#
+set spoolfile = +"thalmeier/INBOX"
+
+# Other global configuration files to include.
+#
+source ~/.mail_config/mutt/common
+#source ~/.mail_config/mutt/colors
+source ~/.mail_config/mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
+source ~/.mail_config/mutt/pgp
+
+# A file which will hold you address book
+#
+set alias_file=~/.mail_config/mutt/aliases
+source $alias_file
+
+# If we are in any directory starting with the following, pull
+# specific settings for that account.
+#
+folder-hook +thalmeier/.* "source ~/.mail_config/mutt/thalmeier"
+folder-hook +michisoft/.* "source ~/.mail_config/mutt/michisoft"
+folder-hook +fftarsdorf/.* "source ~/.mail_config/mutt/fftarsdorf"
+
+# These are the addresses that you mutt to think are you.  You can have them be
+# for any 
+#
+alternates michael@thalmeier.at michi@michisoft.net office@michisoft.net thalmeierm@ff-tarsdorf.at
+
+# Some keybinds that I use.
+#
+#macro index <f2> <change-folder>+"gmail/INBOX"<enter>
+#macro index <f3> <change-folder>+"school/INBOX"<enter>
+#macro generic	\c<Space>	":source ~/.mail_configs/mutt/muttrc\n" "Reload mutt's configuration file"
+macro index	\cn		<next-unread-mailbox>
+macro pager	j		<next-line>
+macro pager	k		<previous-line>
+macro pager	<PageUp> 	<previous-undeleted>
+macro pager	<PageDown>	<next-undeleted>
+macro index	M		"T.*\n;WN"		"Mark all messages as read"

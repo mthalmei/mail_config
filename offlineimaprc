@@ -1,0 +1,83 @@
+[general]
+accounts = thalmeier,michisoft,fftarsdorf
+metadata = ~/.offlineimap
+maxsyncaccounts = 3
+pythonfile=~/.mail_config/offlineimap-helpers.py
+
+[mbnames]
+# This populates a mailbox file for mutt to use.
+
+enabled = yes
+filename = ~/.mail_config/mutt/muttmailboxes
+header = "mailboxes "
+
+# Exclude from the list of mailboxes any folder matching the regex below.
+# Works for all accounts
+folderfilter = lambda accountname, foldername: not re.search('(^bak.*|.*Drafts$|.*Spam$|.*Sent$|.*Trash$)', foldername)
+
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
+
+[Account thalmeier]
+localrepository = local-thalmeier
+remoterepository = remote-thalmeier
+autorefresh = 10
+quick = 10
+
+[Account michisoft]
+localrepository = local-michisoft
+remoterepository = remote-michisoft
+autorefresh = 10
+quick = 10
+
+[Account fftarsdorf]
+localrepository = local-fftarsdorf
+remoterepository = remote-fftarsdorf
+autorefresh = 10
+quick = 10
+
+[Repository local-thalmeier]
+type = Maildir
+localfolders = ~/.mail/thalmeier
+
+[Repository remote-thalmeier]
+type = IMAP
+remotehost = imap.michisoft.net
+remoteuser = michael@thalmeier.at
+remotepasseval = get_password("imap.michisoft.net", "michael@thalmeier.at")
+ssl = yes
+cert_fingerprint = 5bebfed63c515564280fa8faff52ce58cab546c5
+realdelete = yes
+maxconnections = 10
+folderfilter = lambda foldername: foldername not in ['dovecot.sieve']
+
+[Repository local-michisoft]
+type = Maildir
+localfolders = ~/.mail/michisoft
+
+[Repository remote-michisoft]
+type = IMAP
+remotehost = imap.michisoft.net
+remoteuser = michi@michisoft.net
+remotepasseval = get_password("imap.michisoft.net", "michi@michisoft.net")
+ssl = yes
+cert_fingerprint = 5bebfed63c515564280fa8faff52ce58cab546c5
+realdelete = yes
+maxconnections = 10
+folderfilter = lambda foldername: foldername not in ['dovecot.sieve']
+
+[Repository local-fftarsdorf]
+type = Maildir
+localfolders = ~/.mail/fftarsdorf
+
+[Repository remote-fftarsdorf]
+type = IMAP
+remotehost = imap.michisoft.net
+remoteuser = thalmeierm@ff-tarsdorf.at
+remotepasseval = get_password("imap.michisoft.net", "thalmeierm@ff-tarsdorf.at")
+ssl = yes
+cert_fingerprint = 5bebfed63c515564280fa8faff52ce58cab546c5
+realdelete = yes
+maxconnections = 10
+folderfilter = lambda foldername: foldername not in ['dovecot.sieve']
