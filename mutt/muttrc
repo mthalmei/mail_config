@@ -23,7 +23,8 @@ set spoolfile = +"thalmeier/INBOX"
 #
 source ~/.mail_config/mutt/common
 #source ~/.mail_config/mutt/colors
-source ~/.mail_config/mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
+source ~/.mail_config/mutt/zenburn.theme.rc
+#source ~/.mail_config/mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
 source ~/.mail_config/mutt/pgp
 
 # A file which will hold you address book
