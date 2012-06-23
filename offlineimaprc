@@ -49,7 +49,7 @@ remotepasseval = get_password("imap.michisoft.net", "michael@thalmeier.at")
 ssl = yes
 cert_fingerprint = 5bebfed63c515564280fa8faff52ce58cab546c5
 realdelete = yes
-maxconnections = 10
+maxconnections = 5
 folderfilter = lambda foldername: foldername not in ['dovecot.sieve']
 
 [Repository local-michisoft]
@@ -64,7 +64,7 @@ remotepasseval = get_password("imap.michisoft.net", "michi@michisoft.net")
 ssl = yes
 cert_fingerprint = 5bebfed63c515564280fa8faff52ce58cab546c5
 realdelete = yes
-maxconnections = 10
+maxconnections = 5
 folderfilter = lambda foldername: foldername not in ['dovecot.sieve']
 
 [Repository local-fftarsdorf]
@@ -79,5 +79,5 @@ remotepasseval = get_password("imap.michisoft.net", "thalmeierm@ff-tarsdorf.at")
 ssl = yes
 cert_fingerprint = 5bebfed63c515564280fa8faff52ce58cab546c5
 realdelete = yes
-maxconnections = 10
+maxconnections = 5
 folderfilter = lambda foldername: foldername not in ['dovecot.sieve']
