@@ -39,6 +39,7 @@ set imap_check_subscribed = yes
 # Don't move mail from the spool.
 #
 set move=no
+unset mark_old
 
 #======================================================#
 # which editor do you want to use? 
@@ -60,8 +61,9 @@ set sort_alias=alias # sort aliases in alpha order by alias name
 set markers          # mark wrapped lines of text in the pager with a +
 set smart_wrap       # Don't wrap mid-word
 set pager_context=6  # Retain 6 lines of previous page when scrolling.
+set pager_index_lines=6
 set print_command="muttprint"
 #set status_on_top    # Status bar on top.
-push <show-version>  # Shows mutt version at startup
+#push <show-version>  # Shows mutt version at startup
 
 
