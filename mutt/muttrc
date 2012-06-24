@@ -42,7 +42,7 @@ folder-hook +fftarsdorf/.* "source ~/.mail_config/mutt/fftarsdorf"
 # These are the addresses that you mutt to think are you.  You can have them be
 # for any 
 #
-alternates michael@thalmeier.at michi@michisoft.net office@michisoft.net thalmeierm@ff-tarsdorf.at
+alternates michael@thalmeier.at michi@michisoft.net office@michisoft.net thalmeierm@ff-tarsdorf.at michael.thalmeier@hale.at michael.thalmeier@sigmatek.at
 
 # Some keybinds that I use.
 #
