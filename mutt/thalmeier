@@ -17,3 +17,5 @@ set from="michael@thalmeier.at"
 set pgp_sign_as=0x7BED5166
 #set pgp_autosign=yes
 
+# automatically delete old messages in list folders
+folder-hook +thalmeier/Listen.*		'push <delete-pattern>~r>1m!(~P|~p|~F)<enter>'
