@@ -65,5 +65,8 @@ set pager_index_lines=6
 set print_command="muttprint"
 #set status_on_top    # Status bar on top.
 #push <show-version>  # Shows mutt version at startup
+#
+# automatically delete messages that have no complete thread
+macro index <f4>	":push <delete-pattern>!~(!~hReferences|~F|~sfwd|~P|~p)<enter><enter>"
 
 
